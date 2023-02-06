@@ -21,10 +21,9 @@ const getBgColor = id => {
 
 export default function EachPlaylist({ playlist }) {
     const color = getBgColor(playlist?.id);
-    console.log(playlist)
 
     return <GradientLayout color={color} title={playlist.name} image={`https://picsum.photos/400?random=${playlist.id}`} roundImage={false} subtitle="playlist" description="This is a single song.">
-        <SongTable />
+        <SongTable songs={playlist.songs} />
     </GradientLayout>
 };
 
