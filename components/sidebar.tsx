@@ -82,17 +82,21 @@ export default function Sidebar() {
             <Divider paddingY="10px" />
             <Box height="55%" overflowY="auto" paddingY="20px">
                 <List spacing={2}>
-                    {playlists.map(playlist => (
-                        <ListItem paddingX="20px" fontSize="16px" key={playlist.name}>
-                            <LinkBox>
-                                <Link href="/">
-                                    <LinkOverlay>
-                                        {playlist.name}
-                                    </LinkOverlay>
-                                </Link>
-                            </LinkBox>
-                        </ListItem>
-                    ))}
+                {playlists.map((playlist) => (
+                    <ListItem paddingX="20px" key={playlist.id}>
+                        <LinkBox>
+                        <Link
+                            href={{
+                            pathname: '/playlist/[id]',
+                            query: { id: playlist.id },
+                            }}
+                            passHref
+                        >
+                            <LinkOverlay>{playlist.name}</LinkOverlay>
+                        </Link>
+                        </LinkBox>
+                    </ListItem>
+                ))}
                 </List>
             </Box>
         </Box>

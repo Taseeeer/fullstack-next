@@ -27,7 +27,9 @@ const run = async () => {
         update: {},
         create: {
             email: "user@test.com",
-            password: "password" 
+            password: "password",
+            firstName: "Syed",
+            lastName: "Taseer"
         }
     });
 
